@@ -1,5 +1,11 @@
 # Concall Intelligence Platform
 
+<img width="1919" height="1037" alt="Screenshot 2026-07-12 013140" src="https://github.com/user-attachments/assets/cd1f699e-78ba-4f3f-b927-51f38a2b5f76" />
+<img width="1919" height="1037" alt="Screenshot 2026-07-12 013152" src="https://github.com/user-attachments/assets/0d8088dd-785f-4d39-989d-f3441498cabf" />
+<img width="1916" height="1031" alt="Screenshot 2026-07-12 013214" src="https://github.com/user-attachments/assets/cbdc4e37-4b1a-4862-8b64-8b0d5b767fb4" />
+<img width="1919" height="1026" alt="Screenshot 2026-07-12 013225" src="https://github.com/user-attachments/assets/f40c4c9d-a003-4c46-ac77-df179fa81079" />
+
+
 Upload quarterly earnings-call (concall) transcripts for a portfolio of companies.
 The system extracts text, pulls structured metrics + management guidance, tracks
 **whether past guidance was actually fulfilled in later quarters (with the chain)**,
