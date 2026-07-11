@@ -40,6 +40,8 @@ each becomes a queue consumer (Kafka / Azure Service Bus / SQS).
 9 Valuation · 10 Red flags & governance. TOTAL /100 -> decision band
 (85+ Exceptional, 75-85 High, 65-75 Good, 50-65 Average, <50 Avoid).
 
+<img width="788" height="977" alt="Screenshot 2026-07-12 013850" src="https://github.com/user-attachments/assets/e1400db4-6ccd-4740-827d-8b21825574e2" />
+
 ## Guidance -> Outcome chain (the differentiator)
 
 - Every forward-looking statement in a call -> a `guidance` row (target, period, verbatim quote).
