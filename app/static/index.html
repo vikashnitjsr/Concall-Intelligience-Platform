@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concall Intelligence</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">◆</span>
+      <div>
+        <h1>Concall Intelligence</h1>
+        <p class="tag">Quarterly earnings-call analysis · guidance tracking · red flags</p>
+      </div>
+    </div>
+    <nav>
+      <button class="tab active" data-view="dashboard">Dashboard</button>
+      <button class="tab" data-view="rankings">Fundamental Rankings</button>
+      <button class="tab" data-view="company">Company Insights</button>
+      <button class="tab" data-view="upload">Upload Transcript</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="view active">
+      <h2>Leaderboards <span id="asof" class="pill"></span></h2>
+      <div id="boards" class="boards"></div>
+      <p class="disclaimer">Decision-support only, not financial advice. Every insight is backed by a verbatim quote from the transcript.</p>
+    </section>
+
+    <!-- RANKINGS -->
+    <section id="rankings" class="view">
+      <h2>Fundamentals-Based Ranking <span class="pill">Rank 1 → 23</span></h2>
+      <p class="muted" id="rankMethod"></p>
+      <div id="rankTable"></div>
+      <p class="disclaimer">Decision-support only, not financial advice. Stock CAGR from public market data; Sales/Profit CAGR &amp; ROE are management-disclosed or computed from filings — gaps are flagged, never fabricated.</p>
+    </section>
+
+    <!-- COMPANY -->
+    <section id="company" class="view">
+      <div class="row">
+        <label>Company:
+          <select id="companySelect"></select>
+        </label>
+        <button id="refreshCompany" class="btn">Load insights</button>
+      </div>
+      <div id="companyInsights"></div>
+    </section>
+
+    <!-- UPLOAD -->
+    <section id="upload" class="view">
+      <h2>Upload a quarterly concall transcript (PDF)</h2>
+      <form id="uploadForm" class="card form">
+        <div class="grid2">
+          <label>Ticker <input name="ticker" required placeholder="RAIN" /></label>
+          <label>Company name <input name="name" required placeholder="Rain Industries Limited" /></label>
+          <label>Fiscal year <input name="fiscal_year" type="number" required placeholder="2026" /></label>
+          <label>Quarter <select name="quarter"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+        </div>
+        <label class="file">Transcript PDF <input name="file" type="file" accept="application/pdf" required /></label>
+        <button class="btn primary" type="submit">Upload &amp; analyze</button>
+      </form>
+      <div id="uploadResult"></div>
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

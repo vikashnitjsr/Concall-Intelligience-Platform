@@ -1,0 +1,180 @@
+:root {
+  --bg: #0f1420;
+  --panel: #181f2e;
+  --panel2: #202a3d;
+  --line: #2b3750;
+  --text: #e7ecf5;
+  --muted: #9aa7bd;
+  --accent: #4f8cff;
+  --green: #2ecc71;
+  --amber: #f1c40f;
+  --red: #e74c3c;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.5 -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 28px; border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #141b2b, #0f1420);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { display: flex; gap: 14px; align-items: center; }
+.logo { font-size: 26px; color: var(--accent); }
+h1 { font-size: 18px; margin: 0; }
+.tag { margin: 0; color: var(--muted); font-size: 12px; }
+nav { display: flex; gap: 8px; }
+.tab {
+  background: transparent; color: var(--muted); border: 1px solid transparent;
+  padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 14px;
+}
+.tab:hover { color: var(--text); }
+.tab.active { background: var(--panel2); color: var(--text); border-color: var(--line); }
+main { max-width: 1100px; margin: 0 auto; padding: 24px 28px 60px; }
+.view { display: none; }
+.view.active { display: block; }
+h2 { font-size: 20px; margin: 8px 0 18px; }
+.pill {
+  font-size: 12px; color: var(--muted); background: var(--panel2);
+  padding: 3px 10px; border-radius: 20px; margin-left: 8px; border: 1px solid var(--line);
+}
+.card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px; margin-bottom: 18px;
+}
+.disclaimer { color: var(--muted); font-size: 12px; margin-top: 20px; }
+
+/* leaderboards */
+.boards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.board h3 { margin: 0 0 12px; font-size: 15px; }
+.board ol { margin: 0; padding-left: 0; list-style: none; }
+.board li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 10px; border-radius: 8px; margin-bottom: 6px; background: var(--panel2);
+}
+.board li .rank { color: var(--muted); width: 22px; }
+.board li .nm { flex: 1; margin: 0 8px; }
+.board li .val { font-variant-numeric: tabular-nums; font-weight: 600; }
+.tick { color: var(--muted); font-size: 12px; }
+
+/* company insights */
+.row { display: flex; gap: 12px; align-items: end; margin-bottom: 18px; }
+select, input {
+  background: var(--panel2); color: var(--text); border: 1px solid var(--line);
+  border-radius: 8px; padding: 9px 11px; font-size: 14px; margin-top: 4px;
+}
+label { display: block; color: var(--muted); font-size: 13px; }
+.btn {
+  background: var(--panel2); color: var(--text); border: 1px solid var(--line);
+  padding: 9px 16px; border-radius: 8px; cursor: pointer; font-size: 14px;
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.score-head { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.gauge { text-align: center; }
+.gauge .num { font-size: 46px; font-weight: 700; line-height: 1; }
+.gauge .den { color: var(--muted); font-size: 14px; }
+.band { padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px; }
+.band.Exceptional, .band.High { background: rgba(46,204,113,.15); color: var(--green); }
+.band.Good { background: rgba(79,140,255,.15); color: var(--accent); }
+.band.Average { background: rgba(241,196,15,.15); color: var(--amber); }
+.band.Avoid { background: rgba(231,76,60,.15); color: var(--red); }
+.metrics-inline { display: flex; gap: 22px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+.metrics-inline b { color: var(--text); }
+
+.section-bar { margin: 9px 0; }
+.section-bar .lab { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 3px; }
+.bar { height: 8px; background: var(--panel2); border-radius: 6px; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--accent); }
+.bar.low > span { background: var(--red); }
+.bar.mid > span { background: var(--amber); }
+.bar.high > span { background: var(--green); }
+
+.flag { border-left: 3px solid var(--line); padding: 8px 12px; margin: 8px 0; background: var(--panel2); border-radius: 6px; }
+.flag.high { border-color: var(--red); }
+.flag.medium { border-color: var(--amber); }
+.flag.low { border-color: var(--muted); }
+.flag .t { font-weight: 600; text-transform: capitalize; }
+.flag .q { color: var(--muted); font-size: 12px; font-style: italic; margin-top: 4px; }
+.sev { font-size: 11px; padding: 2px 8px; border-radius: 20px; margin-left: 8px; }
+.sev.high { background: rgba(231,76,60,.18); color: var(--red); }
+.sev.medium { background: rgba(241,196,15,.18); color: var(--amber); }
+.sev.low { background: rgba(154,167,189,.18); color: var(--muted); }
+
+/* guidance chain */
+.chain { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 10px 0; background: var(--panel2); }
+.chain .top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.chain .meta { color: var(--muted); font-size: 12px; }
+.chain .q { font-style: italic; color: var(--muted); font-size: 13px; margin: 6px 0; }
+.status { font-size: 11px; padding: 2px 10px; border-radius: 20px; font-weight: 600; }
+.status.MET { background: rgba(46,204,113,.18); color: var(--green); }
+.status.PARTIAL { background: rgba(241,196,15,.18); color: var(--amber); }
+.status.MISSED { background: rgba(231,76,60,.18); color: var(--red); }
+.status.IN_PROGRESS, .status.open { background: rgba(79,140,255,.18); color: var(--accent); }
+.timeline { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.timeline .node { font-size: 12px; background: var(--panel); border: 1px solid var(--line); padding: 4px 10px; border-radius: 20px; }
+
+.guide { display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.guide .arrow { font-weight: 700; }
+.guide .arrow.up { color: var(--green); }
+.guide .arrow.down { color: var(--red); }
+.guide .arrow.flat { color: var(--muted); }
+.guide .g-quote { color: var(--muted); font-size: 13px; font-style: italic; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form label { color: var(--text); }
+.form input, .form select { width: 100%; }
+.file { margin: 14px 0; }
+.note { padding: 12px 14px; border-radius: 8px; background: var(--panel2); border: 1px solid var(--line); margin-top: 14px; }
+.muted { color: var(--muted); }
+h3.sec { font-size: 15px; margin: 18px 0 8px; color: var(--accent); }
+@media (max-width: 720px) { .boards { grid-template-columns: 1fr; } .grid2 { grid-template-columns: 1fr; } }
+
+/* --- fundamental ranking table --- */
+#rankMethod { font-size: 12px; margin: -8px 0 16px; line-height: 1.6; }
+.ranktable { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--panel); border-radius: var(--radius); overflow: hidden; }
+.ranktable thead th { text-align: left; padding: 11px 10px; background: var(--panel2); color: var(--muted); font-weight: 600; font-size: 12px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.ranktable tbody td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.ranktable tbody tr:hover { background: rgba(79,140,255,.06); }
+.ranktable tbody tr:first-child { background: rgba(46,204,113,.05); }
+.ranktable .rk { font-size: 16px; font-weight: 700; text-align: center; width: 40px; }
+.ranktable .nmcell b { display: block; font-size: 13px; }
+.ranktable .nmcell .tick { font-size: 11px; }
+.ranktable td.na { color: var(--muted); font-style: italic; }
+.ranktable td.neg { color: var(--red); }
+.ranktable td.compl { text-align: center; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ranktable .band { padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-left: 4px; }
+.scorebar { position: relative; background: var(--panel2); border-radius: 6px; height: 20px; min-width: 120px; overflow: hidden; }
+.scorebar span { position: absolute; left: 0; top: 0; bottom: 0; background: linear-gradient(90deg, var(--accent), #7db0ff); border-radius: 6px; }
+.scorebar em { position: relative; z-index: 1; font-style: normal; font-size: 12px; font-weight: 700; line-height: 20px; padding-left: 8px; }
+.fl { font-size: 9px; font-weight: 700; padding: 1px 3px; border-radius: 4px; margin-left: 2px; cursor: help; }
+.fl-M { background: rgba(46,204,113,.2); color: var(--green); }
+.fl-C { background: rgba(79,140,255,.2); color: var(--accent); }
+.fl-G { background: rgba(241,196,15,.2); color: var(--amber); }
+.fl-P { background: rgba(155,167,189,.2); color: var(--muted); }
+.fl-MD { background: rgba(231,76,60,.18); color: var(--red); }
+.star { color: var(--amber); font-weight: 700; cursor: help; }
+.legend { margin-top: 12px; font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+
+/* --- valuation / PEG cell --- */
+.ranktable .thsub { font-size: 10px; color: var(--muted); font-weight: 400; }
+.peg { font-weight: 700; font-size: 13px; padding: 1px 5px; border-radius: 5px; }
+.peg.under { background: rgba(46,204,113,.18); color: var(--green); }
+.peg.over { background: rgba(231,76,60,.16); color: var(--red); }
+.verdict { display: block; font-size: 10px; margin-top: 2px; font-weight: 600; }
+.verdict.under { color: var(--green); }
+.verdict.over { color: var(--red); }
+
+/* --- company insights: valuation (PEG) card --- */
+.peg-head { display: flex; gap: 20px; align-items: center; }
+.peg-big { font-size: 40px; font-weight: 800; line-height: 1; padding: 14px 20px; border-radius: 12px; text-align: center; }
+.peg-big span { display: block; font-size: 12px; font-weight: 600; margin-top: 4px; letter-spacing: 1px; }
+.peg-big.under { background: rgba(46,204,113,.15); color: var(--green); }
+.peg-big.over { background: rgba(231,76,60,.15); color: var(--red); }
+.verdict-badge { padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 14px; }
+.verdict-badge.under { background: rgba(46,204,113,.15); color: var(--green); }
+.verdict-badge.over { background: rgba(231,76,60,.15); color: var(--red); }

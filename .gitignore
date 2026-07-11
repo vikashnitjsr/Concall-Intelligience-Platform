@@ -1,0 +1,12 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Env / venv
+.venv/
+.env
+
+# Local data
+data/
+*.db
+concall.db
