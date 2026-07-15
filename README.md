@@ -123,8 +123,26 @@ sql/schema.sql       raw DDL (reference; ORM creates tables)
 tests/               unit tests for guidance reconciliation + scoring
 ```
 
+
 ## Swapping stubs for real providers
 
 - `app/services/extraction.py::extract_text` -> Azure Document Intelligence / AWS Textract, Tesseract OCR fallback.
 - `app/llm/client.py::LLMClient` -> Azure OpenAI / OpenAI with JSON-schema function calling.
   Set `LLM_PROVIDER=azure_openai` and the related env vars; the stub is used otherwise.
+
+### Execution Process :
+<img width="880" height="967" alt="Screenshot 2026-07-15 154000" src="https://github.com/user-attachments/assets/0e9bc5db-99f3-43cb-ac68-ee9c14f13c3a" />
+
+C:\Users\vchaurasia\concall-intel\Start-Server-Guide.pdf 
+
+It contains step-by-step instructions:
+
+1. Open PowerShell →  cd  to the project
+2. (First time) create venv +  pip install -r requirements.txt 
+3. (First time)  python -m app.cli initdb 
+4. Start:  .\.venv\Scripts\python.exe -m uvicorn app.main:app --port 8010 
+5. Open http://localhost:8010 (and  /docs )
+6. Stopping the server (Ctrl+C or  Stop-Process -Id <PID> )
+
+The server from earlier is still running at http://localhost:8010.
+
